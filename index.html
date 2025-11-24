@@ -1,98 +1,133 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ótica Marias</title>
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #fff7d1;
-        color: #333;
-    }
-    header {
-        background: #ffd500;
-        padding: 20px;
-        text-align: center;
-        font-size: 28px;
-        font-weight: bold;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    .hero {
-        text-align: center;
-        padding: 30px;
-    }
-    .hero img {
-        width: 250px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    .section {
-        padding: 25px;
-        margin: 20px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    h2 {
-        color: #d4a100;
-    }
-    .btn-zap {
-        display: block;
-        width: fit-content;
-        margin: 20px auto;
-        background: #25d366;
-        color: white;
-        padding: 12px 20px;
-        font-size: 20px;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-    }
-    footer {
-        text-align: center;
-        padding: 25px;
-        background: #ffd500;
-        margin-top: 40px;
-        font-weight: bold;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ótica Marias</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff9d6;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #f7d400, #ffea75);
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            animation: fadeInDown 1s ease;
+        }
+        @keyframes fadeInDown {
+            from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1518306727298-4c17e1bf8d8b');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 10px black;
+            font-size: 32px;
+            animation: zoom 1.5s ease;
+        }
+        @keyframes zoom { from {transform: scale(1.1);} to {transform: scale(1);} }
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+            animation: fadeIn 1.2s ease;
+        }
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform .3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 25px;
+            font-size: 20px;
+            background: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% {transform: scale(1);} 50% {transform: scale(1.08);} 100% {transform: scale(1);} }
+        footer {
+            margin-top: 40px;
+            background: #f7d400;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .socials a {margin: 0 10px; font-size: 20px; text-decoration: none; color: #333;}
+    </style>
 </head>
 <body>
-<header>Ótica Marias</header>
 
-<div class="hero">
-    <h1>Bem-vindo à Ótica Marias!</h1>
-    <p>Atendemos Salvador inteira com conforto, qualidade e preço justo.</p>
-    <img src="/mnt/data/c4198ea1-d944-4524-8299-ecf9aaae8fb1.png" alt="Óculos">
-</div>
+<header>Ótica Marias – Conforto e Qualidade Para Sua Visão</header>
 
-<div class="section">
+<div class="hero">Bem-vindo à Ótica Marias!</div>
+
+<section class="section">
+    <h2>Quem Somos</h2>
+    <p>Facilitamos seu exame de vista. Preços acessíveis que cabem no seu orçamento. Conforto e qualidade para sua visão. Atendemos toda Salvador!</p>
+</section>
+
+<section class="section">
+    <h2>Nossos Óculos</h2>
+    <div class="cards">
+        <div class="card"><img src="https://images.unsplash.com/photo-1511140973288-19bf21d7e771"><p>Modelos modernos e confortáveis.</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b"><p>Armações leves e resistentes.</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1504470695779-75300268aa0e"><p>Estilo e elegância para todos.</p></div>
+    </div>
+</section>
+
+<section class="section">
     <h2>Nossas Lojas</h2>
-    <p>📍 Travessa Ambrósio Calmón — Periperi</p>
-    <p>📍 São João do Cabrito — Rua dos Ferroviários</p>
-</div>
+    <p>📍 Travessa Ambrósio Calmón – Peri Peri</p>
+    <p>📍 São João do Cabrito – Rua dos Ferroviários</p>
+</section>
 
-<div class="section">
-    <h2>Entre em Contato</h2>
-    <p>Clique no botão abaixo para falar diretamente com a gente!</p>
-    <a class="btn-zap" href="https://wa.me/557187444942" target="_blank">💬 Falar no WhatsApp</a>
-</div>
+<section class="section">
+    <h2>Contato</h2>
+    <a class="whatsapp-btn" href="https://wa.me/557187444942" target="_blank">Fale Conosco no WhatsApp</a>
 
-<div class="section">
-    <h2>Redes Sociais</h2>
-    <p>📸 Instagram: <strong>@otica_marias</strong></p>
-    <p>📘 Facebook: <strong>ótica_marias</strong></p>
-</div>
+    <div class="socials">
+        <p>Siga nossas redes:</p>
+        <a href="https://instagram.com/ótica_marias" target="_blank">Instagram</a>
+        <a href="https://facebook.com/ótica_marias" target="_blank">Facebook</a>
+    </div>
+</section>
 
-<div class="section">
-    <h2>Nossos Compromissos</h2>
-    <p>✔️ Facilitamos seu exame de vista.</p>
-    <p>✔️ Preços acessíveis que cabem no seu orçamento.</p>
-    <p>✔️ Conforto e qualidade para sua visão.</p>
-</div>
+<footer>© 2025 Ótica Marias - Salvador, BA</footer>
 
+</body>
+</html>
 <footer>Ótica Marias — Qualidade que você enxerga!</footer>
 
 </body>
