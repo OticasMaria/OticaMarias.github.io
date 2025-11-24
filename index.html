@@ -3,141 +3,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ótica Visão Dourada</title>
+  <title>Ótica Marias</title>
   <style>
+    :root{
+      --amarelo:#ffd700;
+      --amarelo-esc:#d4a200;
+      --preto:#000;
+      --fundo:#fff8db;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, var(--fundo), #fff4c2, #ffefad);
+      color: var(--preto);
+      overflow-x: hidden;
     }
-    header { width:100%; padding:20px; background:#ffd700; color:#000; text-align:center; font-size:28px; font-weight:bold; }
-    .hero { background:#ffd700; height:40vh; display:flex; justify-content:center; align-items:center; text-align:center; color:black; }
-    .hero h1 {
-      font-size: 50px;
-      max-width: 800px;
-      line-height: 1.2;
+
+    /* cabeçalho com fundo amarelo sólido (sem degradê) */
+    header {
+      background: var(--amarelo);
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--amarelo-esc);
     }
+    header h1 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      margin: 0;
+      color: var(--preto);
+      letter-spacing: 2px;
+    }
+    header p {
+      margin-top: 8px;
+      font-size: 1rem;
+      color: var(--preto);
+      opacity: 0.95;
+    }
+
     .section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 30px auto;
     }
-    .titulo {
-      font-size: 32px;
-      font-weight: bold;
+
+    .titulo-estilizado {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #b28704;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
     }
-    .REMOVIDO {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+
+    .sobre {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
     }
-    .card {
-      background: white;
+    .sobre img {
+      width: 320px;
+      border-radius: 20px;
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
+      object-fit: cover;
+    }
+    .sobre-texto {
+      flex: 1;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--preto);
+    }
+
+    /* caixa de localização (estilizada) */
+    .loc-box {
+      background: #ffffff;
+      padding: 22px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .loc-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px dashed rgba(0,0,0,0.06);
+    }
+    .loc-item:last-child { border-bottom: none; }
+
+    .loc-text {
+      font-weight: 800; /* mais gordinha */
+      font-size: 1.12rem;
+      color: var(--preto);
+    }
+
+    /* botão do mapa (mais bonito) */
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      background: linear-gradient(90deg, var(--amarelo), #ffdf6a);
+      color: #000;
+      font-weight: 900;
       border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-decoration: none;
+      box-shadow: 0 8px 18px rgba(212,162,0,0.18);
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .map-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 30px rgba(212,162,0,0.18);
+    }
+    .map-icon {
+      width: 18px;
+      height: 18px;
+      display:inline-block;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23000" viewBox="0 0 24 24"><path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>') center/contain no-repeat;
+    }
+
+    .contato {
       text-align: center;
+      margin-top: 12px;
     }
-    .card img {
-      width: 100%;
-      border-radius: 12px;
+    .zap-btn {
+      display: inline-block;
+      padding: 12px 22px;
+      background: #25d366;
+      color: white;
+      font-size: 1.05rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
     }
-    .card h3 {
-      margin: 15px 0 5px 0;
-      font-size: 20px;
-    }
-    .card p {
-      font-size: 15px;
-      color: #555;
-    }
+
+    .social { text-align:center; margin-top:18px; font-size:1rem; }
+
     footer {
-      margin-top: 60px;
-      background: #000;
-      color: #ffd700;
       text-align: center;
-      padding: 20px;
-      font-size: 16px;
+      padding: 18px;
+      background: #ffe680;
+      margin-top: 40px;
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #4a3f00;
+    }
+
+    /* responsividade */
+    @media (max-width:760px){
+      header h1 { font-size:1.8rem; }
+      .sobre img { width: 100%; max-width:360px; }
+      .loc-item { flex-direction: column; align-items: flex-start; gap:8px; }
+      .map-btn { width: 100%; justify-content:center; }
     }
   </style>
 </head>
 <body>
 
-<header>Ótica Marias</header>
+  <header>
+    <h1>Ótica Marias</h1>
+    <p>Facilitamos seu exame de vista • Preços que cabem no seu orçamento</p>
+  </header>
 
-<section class="hero" style="background:#ffd700; height:40vh; display:flex; justify-content:center; align-items:center; text-align:center; color:black;"><h1 style="font-size:48px; font-weight:900;">Bem-vindo à Ótica Marias</h1></section>
-
-<section class="section">
-  <div class="titulo"></div>
-  <div class="produtos">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1581578017426-04fbc3d6f75e" />
-      <h3>Armações Modernas</h3>
-      <p>Design elegante pensado para combinar com seu estilo.</p>
+  <section class="section">
+    <h2 class="titulo-estilizado">Bem-vindo à Ótica Marias</h2>
+    <div class="sobre">
+      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=1000" alt="Óculos premium elegante">
+      <div class="sobre-texto">
+        Somos uma ótica dedicada a proporcionar conforto, qualidade e estética para sua visão. Atendemos toda a cidade de Salvador, com presença física e atendimento online via WhatsApp.
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1556306535-0c2e0f4de615" />
-      <h3>Óculos de Sol</h3>
-      <p>Proteção UV e estilo para todas as ocasiões.</p>
+  <!-- Caixa de localização com botões para abrir no Google Maps -->
+  <section class="section">
+    <div class="loc-box" aria-label="Locais da loja">
+      <div class="loc-item">
+        <div class="loc-text">📍 Travessa Ambrósio Calmón — Periperi</div>
+        <a class="map-btn" href="https://www.google.com/maps/search/Travessa+Ambr%C3%B3sio+Calm%C3%B3n+Periperi+Salvador" target="_blank" rel="noopener">
+          <span class="map-icon" aria-hidden="true"></span> Ver no Mapa
+        </a>
+      </div>
+
+      <div class="loc-item">
+        <div class="loc-text">📍 São João do Cabrito — Rua dos Ferroviários</div>
+        <a class="map-btn" href="https://www.google.com/maps/search/S%C3%A3o+Jo%C3%A3o+do+Cabrito+Rua+dos+Ferrovi%C3%A1rios+Salvador" target="_blank" rel="noopener">
+          <span class="map-icon" aria-hidden="true"></span> Ver no Mapa
+        </a>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1584043720379-9f8df8853b86" />
-      <h3>Linha Executiva</h3>
-      <p>Sofisticação e conforto para o dia a dia.</p>
+  <section class="section" style="text-align:center;">
+    <div class="titulo-estilizado">Contato</div>
+    <a class="zap-btn" href="https://wa.me/557187444942" target="_blank" rel="noopener">Fale Conosco no WhatsApp</a>
+
+    <div class="social">
+      <p>Instagram: <strong>@otica_marias</strong></p>
+      <p>Facebook: <strong>ótica_marias</strong></p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" style="background:white; border-radius:20px; padding:40px; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
-  <div class="titulo">Quem Somos</div>
-  <div style="display:flex; flex-wrap:wrap; gap:30px; align-items:center; justify-content:center;">
-    <img src="PLACEHOLDER-FOTO-QUEM-SOMOS" style="width:320px; height:320px; border-radius:20px; object-fit:cover; background:#ddd;" />
-    <p style="max-width:500px; font-size:18px; line-height:1.5;">
-      Na Ótica Marias, oferecemos conforto, qualidade e preços acessíveis que cabem no seu bolso.
-      Trabalhamos com armações modernas, lentes de alta qualidade e atendimento especializado.<br><br>
-      <strong>Facilitamos seu exame de vista.</strong><br>
-      Atendemos toda Salvador com dedicação e cuidado.
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="titulo">Nossas Lojas</div>
-  <div style="background:#fff; padding:25px; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.15); max-width:700px; margin:auto;">
-  <ul style="font-size:20px; line-height:1.8; list-style:none; padding:0;">
-    <li style="margin-bottom:18px;">📍 Travessa Ambrósio Calmón — Periperi<br>
-      <a href="https://www.google.com/maps/search/Travessa+Ambr%C3%B3sio+Calm%C3%B3n+Periperi" 
-         style="display:inline-block; margin-top:8px; padding:10px 18px; background:#ffd700; color:#000; border-radius:12px; text-decoration:none; font-weight:900; box-shadow:0 3px 8px rgba(0,0,0,0.2);">
-         📍 Ver no Mapa
-      </a>
-    </li>
-
-    <li>📍 São João do Cabrito — Rua dos Ferroviários<br>
-      <a href="https://www.google.com/maps/search/S%C3%A3o+Jo%C3%A3o+do+Cabrito+Rua+dos+Ferrovi%C3%A1rios" 
-         style="display:inline-block; margin-top:8px; padding:10px 18px; background:#ffd700; color:#000; border-radius:12px; text-decoration:none; font-weight:900; box-shadow:0 3px 8px rgba(0,0,0,0.2);">
-         📍 Ver no Mapa
-      </a>
-    </li>
-  </ul>
-</div>
-</section>
-
-<section class="section" style="text-align:center;">
-  <div class="titulo">Contato</div>
-  <a href="https://wa.me/557187444942" style="padding:15px 25px; background:#ffd700; color:black; font-size:20px; border-radius:10px; text-decoration:none; font-weight:bold;">Falar no WhatsApp</a>
-  <div style="margin-top:20px; font-size:18px;">
-    Instagram: <strong>@otica_marias</strong><br>
-    Facebook: <strong>ótica_marias</strong>
-  </div>
-</section>
-
-<footer>
-  © 2025 Ótica Marias — Todos os direitos reservados
-</footer>
+  <footer>
+    © 2025 Ótica Marias — Qualidade para enxergar seu mundo
+  </footer>
 
 </body>
 </html>
