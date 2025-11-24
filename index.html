@@ -5,58 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ótica Marias</title>
   <style>
-    :root{
-      --amarelo:#ffd700;
-      --amarelo-esc:#d4a200;
-      --preto:#000;
-      --fundo:#fff8db;
-    }
-
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, var(--fundo), #fff4c2, #ffefad);
-      color: var(--preto);
+      background: linear-gradient(180deg, #fff8db, #fff4c2, #ffefad);
+      color: #333;
       overflow-x: hidden;
     }
-
-    /* cabeçalho com fundo amarelo sólido (sem degradê) */
     header {
-      background: var(--amarelo);
+      background: linear-gradient(135deg, #ffd54f, #ffecb3);
       padding: 40px 20px;
       text-align: center;
-      border-bottom: 4px solid var(--amarelo-esc);
+      border-bottom: 5px solid #c9a200;
+      animation: fadeIn 1.5s ease;
     }
     header h1 {
-      font-size: 3.2rem;
-      font-weight: 900;
-      margin: 0;
-      color: var(--preto);
-      letter-spacing: 2px;
+      font-size: 4rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: #2a2100;
+      text-shadow: 3px 3px 12px rgba(0,0,0,0.25);
     }
     header p {
-      margin-top: 8px;
-      font-size: 1rem;
-      color: var(--preto);
-      opacity: 0.95;
+      font-size: 1.3rem;
+      margin-top: 10px;
+      font-style: italic;
+      color: #4a3f00;
     }
-
     .section {
-      padding: 40px 20px;
+      padding: 50px 20px;
       max-width: 1000px;
-      margin: 30px auto;
+      margin: auto;
+      animation: slideUp 1.2s ease;
     }
-
     .titulo-estilizado {
-      font-size: 2.4rem;
+      font-size: 3rem;
       font-weight: 800;
       color: #b28704;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 35px;
       text-transform: uppercase;
-      letter-spacing: 1.8px;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px rgba(0,0,0,0.15);
+      animation: slideUp 1s ease;
     }
-
     .sobre {
       display: flex;
       gap: 30px;
@@ -67,102 +59,62 @@
     .sobre img {
       width: 320px;
       border-radius: 20px;
-      box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
-      object-fit: cover;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      animation: float 4s ease-in-out infinite;
     }
     .sobre-texto {
       flex: 1;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: var(--preto);
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #5e4a00;
     }
-
-    /* caixa de localização (estilizada) */
-    .loc-box {
-      background: #ffffff;
-      padding: 22px;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      max-width: 760px;
-      margin: 0 auto;
+    .lojas {
+      background: #fff3b3;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      text-align: center;
     }
-    .loc-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px dashed rgba(0,0,0,0.06);
-    }
-    .loc-item:last-child { border-bottom: none; }
-
-    .loc-text {
-      font-weight: 800; /* mais gordinha */
-      font-size: 1.12rem;
-      color: var(--preto);
-    }
-
-    /* botão do mapa (mais bonito) */
-    .map-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      background: linear-gradient(90deg, var(--amarelo), #ffdf6a);
-      color: #000;
-      font-weight: 900;
-      border-radius: 12px;
-      text-decoration: none;
-      box-shadow: 0 8px 18px rgba(212,162,0,0.18);
-      border: 1px solid rgba(0,0,0,0.06);
-      transition: transform .12s ease, box-shadow .12s ease;
-    }
-    .map-btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 30px rgba(212,162,0,0.18);
-    }
-    .map-icon {
-      width: 18px;
-      height: 18px;
-      display:inline-block;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23000" viewBox="0 0 24 24"><path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>') center/contain no-repeat;
-    }
-
     .contato {
       text-align: center;
-      margin-top: 12px;
+      margin-top: 50px;
     }
     .zap-btn {
       display: inline-block;
-      padding: 12px 22px;
+      padding: 15px 30px;
       background: #25d366;
       color: white;
-      font-size: 1.05rem;
+      font-size: 1.3rem;
       border-radius: 50px;
       text-decoration: none;
-      font-weight: 800;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      font-weight: bold;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+      transition: 0.3s;
+      animation: pulse 2s infinite;
     }
-
-    .social { text-align:center; margin-top:18px; font-size:1rem; }
-
+    .zap-btn:hover {
+      transform: scale(1.05);
+    }
     footer {
       text-align: center;
-      padding: 18px;
+      padding: 20px;
       background: #ffe680;
       margin-top: 40px;
-      font-size: 0.98rem;
+      font-size: 1.1rem;
       font-weight: 600;
       color: #4a3f00;
     }
-
-    /* responsividade */
-    @media (max-width:760px){
-      header h1 { font-size:1.8rem; }
-      .sobre img { width: 100%; max-width:360px; }
-      .loc-item { flex-direction: column; align-items: flex-start; gap:8px; }
-      .map-btn { width: 100%; justify-content:center; }
+    .social {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1.3rem;
+      color: #4a3f00;
     }
+
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    @keyframes slideUp { from {transform: translateY(40px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
+    @keyframes float { 0%,100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
+    @keyframes pulse { 0% {transform: scale(1);} 50% {transform: scale(1.05);} 100% {transform: scale(1);} }
   </style>
 </head>
 <body>
@@ -182,34 +134,21 @@
     </div>
   </section>
 
-  <!-- Caixa de localização com botões para abrir no Google Maps -->
-  <section class="section">
-    <div class="loc-box" aria-label="Locais da loja">
-      <div class="loc-item">
-        <div class="loc-text">📍 Travessa Ambrósio Calmón — Periperi</div>
-        <a class="map-btn" href="https://www.google.com/maps/search/Travessa+Ambr%C3%B3sio+Calm%C3%B3n+Periperi+Salvador" target="_blank" rel="noopener">
-          <span class="map-icon" aria-hidden="true"></span> Ver no Mapa
-        </a>
-      </div>
-
-      <div class="loc-item">
-        <div class="loc-text">📍 São João do Cabrito — Rua dos Ferroviários</div>
-        <a class="map-btn" href="https://www.google.com/maps/search/S%C3%A3o+Jo%C3%A3o+do+Cabrito+Rua+dos+Ferrovi%C3%A1rios+Salvador" target="_blank" rel="noopener">
-          <span class="map-icon" aria-hidden="true"></span> Ver no Mapa
-        </a>
-      </div>
-    </div>
+  <section class="section lojas">
+    <h2 class="titulo-estilizado">Nossas Lojas</h2>
+    <p>📍 Travessa Ambrósio Calmón – Periperi</p>
+    <p>📍 São João do Cabrito – Rua dos Ferroviários</p>
   </section>
 
-  <section class="section" style="text-align:center;">
-    <div class="titulo-estilizado">Contato</div>
-    <a class="zap-btn" href="https://wa.me/557187444942" target="_blank" rel="noopener">Fale Conosco no WhatsApp</a>
+  <div class="contato">
+    <a class="zap-btn" href="https://wa.me/557187444942" target="_blank">Fale Conosco no WhatsApp</a>
+  </div>
 
-    <div class="social">
-      <p>Instagram: <strong>@otica_marias</strong></p>
-      <p>Facebook: <strong>ótica_marias</strong></p>
-    </div>
-  </section>
+  <div class="section social">
+    <p>Siga a gente nas redes:</p>
+    <p>Instagram: <strong>@otica_marias</strong></p>
+    <p>Facebook: <strong>Ótica Marias</strong></p>
+  </div>
 
   <footer>
     © 2025 Ótica Marias — Qualidade para enxergar seu mundo
